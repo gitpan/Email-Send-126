@@ -6,7 +6,7 @@ use warnings;
 use MIME::Lite;
 use MIME::Words qw(encode_mimewords);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 
 sub new {
@@ -70,36 +70,39 @@ Email::Send::126 - Send email with 126.com's SMTP
 
 =head1 VERSION
 
-Version 0.01
+Version 0.02
 
 
 =head1 SYNOPSIS
 
     use Email::Send::126;
     my $smtp = Email::Send::126->new("john","mypasswd");
-    $smtp->sendmail($subject,$content,'abc@163.com','def@sina.com');
-
-    # with debug
-    my $smtp = Email::Send::126->new("john","mypasswd",1);
+    $smtp->sendmail($subject,$content,'foo@163.com','bar@sina.com');
 
 
 =head1 METHODS
 
-=head2 new(username,password,[debug])
+=head2 new($username, $password, [$debug])
 
 Create the object.
+
+The username and password are what you registered on 126.com, the largest freemail provider in China.
 
     my $smtp = Email::Send::126->new("username","password");
     # or with debug
     my $smtp = Email::Send::126->new("username","password",1);
 
-=head2 sendmail($subject,$content,@recepients)
+=head2 sendmail($subject, $content, @recepients)
 
-Send the message. The subject and content can be Chinese, they will be encoded with UTF-8.
+Send the message. 
+
+The subject and content can be Chinese (if so they must be UTF-8 string).
+They will be encoded with UTF-8 for sending.
+
 The message content must be HTML syntax compatible, since this is a HTML email.
 
-    my $subject = "你好";
-    my $content = "<P>您好：</P><P>吃饭了吗？</P>";
+    my $subject = "Hello there";
+    my $content = "<P>Hi there:</P><P>How are you?</P>";
 
     $smtp->sendmail($subject,$content,'foo@163.com');
     # or send to many people

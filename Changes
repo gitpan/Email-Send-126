@@ -1,5 +1,7 @@
 Revision history for Email-Send-126
 
 0.01    2011-08-04
-        First version, released on duowan.com
+        First version, released on duowan.com.
 
+0.02    2011-08-04
+        Some changes to the POD document.
