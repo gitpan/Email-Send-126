@@ -14,6 +14,10 @@ WriteMakefile(
     PL_FILES            => {},
     PREREQ_PM => {
         'Test::More' => 0,
+        'MIME::Lite' => 1,
+        'MIME::Words' => 1,
+        'MIME::Base64' => 1,
+        'Authen::SASL' => 1,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Email-Send-126-*' },
