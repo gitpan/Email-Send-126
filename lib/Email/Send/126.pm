@@ -6,7 +6,7 @@ use warnings;
 use MIME::Lite;
 use MIME::Words qw(encode_mimewords);
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 
 sub new {
@@ -70,7 +70,7 @@ Email::Send::126 - Send email with 126.com's SMTP
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 
 =head1 SYNOPSIS
@@ -86,7 +86,7 @@ Version 0.03
 
 Create the object.
 
-The username and password are what you registered on 126.com, the largest freemail provider in China.
+The username and password are what you registered on 126.com, the largest email provider from China.
 
     my $smtp = Email::Send::126->new("username","password");
     # or with debug
@@ -99,7 +99,7 @@ Send the message.
 The subject and content can be Chinese (if so they must be UTF-8 string).
 They will be encoded with UTF-8 for sending.
 
-The message content must be HTML syntax compatible, since this is a HTML email.
+The message content should be HTML syntax compatible, it will be sent as HTML format.
 
     my $subject = "Hello there";
     my $content = "<P>Hi there:</P><P>How are you?</P>";
@@ -111,12 +111,12 @@ The message content must be HTML syntax compatible, since this is a HTML email.
 
 =head1 AUTHOR
 
-Peng Yong Hua <pyh@cpan.org>
+Ken Peng <yhpeng@cpan.org>
 
 
 =head1 BUGS/LIMITATIONS
 
-If you have found bugs, please send email to <pyh@cpan.org>
+If you have found bugs, please send email to <yhpeng@cpan.org>
 
 
 =head1 SUPPORT
@@ -128,7 +128,7 @@ You can find documentation for this module with the perldoc command.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2011 Peng Yong Hua, all rights reserved.
+Copyright 2012 Ken Peng, all rights reserved.
 
 This program is free software; you can redistribute it and/or modify 
 it under the same terms as Perl itself.
